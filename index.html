@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rihanyo Holdings</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        /* Navigation */
+        nav {
+            background: #1f3c88;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 28px;
+        }
+
+        nav span {
+            font-size: 14px;
+        }
+
+        /* Hero */
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.018)
+                ),
+                url("https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            height: 380px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        /* Booking section */
+        .booking-container {
+            width: 90%;
+            max-width: 900px;
+
+            margin: -60px auto 50px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+            position: relative;
+        }
+
+        .booking-container h2 {
+            text-align: center;
+
+            margin-bottom: 25px;
+
+            color: #1f3c88;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+
+            border-color: #1f3c88;
+        }
+
+        button {
+            width: 100%;
+
+            padding: 15px;
+
+            background: #1f3c88;
+
+            color: black;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #162d68;
+        }
+
+        /* Booking Summary */
+        .price-box {
+            margin-top: 25px;
+
+            background: #fbeeff7a;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            display: none;
+        }
+
+        .price-box h3 {
+            color: #1f3c88;
+
+            margin-bottom: 15px;
+        }
+
+        .price-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin: 10px 0;
+
+            font-size: 17px;
+        }
+
+        .price-row span:last-child {
+            font-weight: bold;
+
+            text-align: right;
+        }
+
+        .section-title {
+            margin-top: 25px;
+
+            margin-bottom: 10px;
+
+            color: #1f3c88;
+
+            border-bottom: 1px solid #ccc;
+
+            padding-bottom: 8px;
+        }
+
+        .total {
+            border-top: 2px solid #ccc;
+
+            margin-top: 15px;
+
+            padding-top: 15px;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: #1f3c88;
+        }
+
+        .confirm-button {
+            margin-top: 20px;
+
+            background: #16803c;
+        }
+
+        .confirm-button:hover {
+            background: #0e642d;
+        }
+
+        /* Footer */
+        footer {
+            background: #1f3c88;
+
+            color: black;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .booking-container {
+                padding: 25px;
+            }
+
+            .price-row {
+                flex-direction: column;
+
+                gap: 3px;
+            }
+
+            .price-row span:last-child {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <h1>RIHANYO</h1>
+
+        <span>Tent & Chair Hire</span>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div>
+
+            <h2>Rihanyo Holdings</h2>
+
+            <p>Hinkwaswo ka swona hi zama Rihanyu</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Booking -->
+
+    <section class="booking-container">
+
+        <h2>Book Your Tent & Chairs</h2>
+
+
+        <!-- Customer -->
+
+        <div class="form-group">
+
+            <label for="customerName">
+                Customer Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your full name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="phoneNumber">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="Enter your phone number"
+            >
+
+        </div>
+
+
+        <!-- Location -->
+
+        <div class="form-group">
+
+            <label for="deliveryLocation">
+                Where should we deliver?
+            </label>
+
+            <input
+                type="text"
+                id="deliveryLocation"
+                placeholder="Enter delivery location"
+            >
+
+        </div>
+
+
+        <!-- Date -->
+
+        <div class="form-group">
+
+            <label for="bookingDate">
+                Date Needed
+            </label>
+
+            <input
+                type="date"
+                id="bookingDate"
+            >
+
+        </div>
+
+
+        <!-- Time -->
+
+        <div class="form-group">
+
+            <label for="bookingTime">
+                Time Needed
+            </label>
+
+            <input
+                type="time"
+                id="bookingTime"
+            >
+
+        </div>
+
+
+        <!-- Duration -->
+
+        <div class="form-group">
+
+            <label for="hireDuration">
+                How Long Do You Need Them?
+            </label>
+
+            <select id="hireDuration">
+
+                <option value="">
+                    -- Select Duration --
+                </option>
+
+                <option value="1">
+                    1 Day
+                </option>
+
+                <option value="2">
+                    2 Days
+                </option>
+
+                <option value="3">
+                    3 Days
+                </option>
+
+                <option value="4">
+                    4 Days
+                </option>
+
+                <option value="5">
+                    5 Days
+                </option>
+
+                <option value="6">
+                    6 Days
+                </option>
+
+                <option value="7">
+                    7 Days
+                </option>
+
+                <option value="14">
+                    2 Weeks
+                </option>
+
+                <option value="30">
+                    1 Month
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Tent Colour -->
+
+        <div class="form-group">
+
+            <label for="tentColor">
+                Choose Tent Colour
+            </label>
+
+            <select id="tentColor">
+
+                <option value="">
+                    -- Select Tent Colour --
+                </option>
+
+                <option value="White">
+                    White
+                </option>
+
+                <option value="Black">
+                    Black
+                </option>
+
+                <option value="Blue">
+                    Blue
+                </option>
+
+                <option value="Red">
+                    Red
+                </option>
+
+                <option value="Green">
+                    Green
+                </option>
+
+                <option value="Yellow">
+                    Yellow
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Tents -->
+
+        <div class="form-group">
+
+            <label for="tentQuantity">
+                Number of Tents
+            </label>
+
+            <input
+                type="number"
+                id="tentQuantity"
+                min="0"
+                value="0"
+            >
+
+        </div>
+
+
+        <!-- Chairs -->
+
+        <div class="form-group">
+
+            <label for="chairQuantity">
+                Number of Chairs
+            </label>
+
+            <input
+                type="number"
+                id="chairQuantity"
+                min="0"
+                value="0"
+            >
+
+        </div>
+
+
+        <!-- Delivery person -->
+
+        <div class="form-group">
+
+            <label for="deliveryPerson">
+                Who Should Deliver?
+            </label>
+
+            <select id="deliveryPerson">
+
+                <option value="">
+                    -- Select Delivery Person --
+                </option>
+
+                <option value="Machupu">
+                    Machupu
+                </option>
+
+                <option value="Bubing">
+                    Bubing
+                </option>
+
+                <option value="Gundeni">
+                    Gundeni
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Calculate -->
+
+        <button onclick="calculateTotal()">
+
+            Calculate Booking
+
+        </button>
+
+
+        <!-- RESULT -->
+
+        <div class="price-box" id="priceBox">
+
+            <h3>
+                Booking Summary
+            </h3>
+
+
+            <h4 class="section-title">
+                Customer Details
+            </h4>
+
+
+            <div class="price-row">
+
+                <span>
+                    Customer:
+                </span>
+
+                <span id="bookingCustomer">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Phone:
+                </span>
+
+                <span id="bookingPhone">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Delivery Location:
+                </span>
+
+                <span id="bookingLocation">
+                </span>
+
+            </div>
+
+
+            <h4 class="section-title">
+                Booking Details
+            </h4>
+
+
+            <div class="price-row">
+
+                <span>
+                    Date:
+                </span>
+
+                <span id="bookingDateDisplay">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Time:
+                </span>
+
+                <span id="bookingTimeDisplay">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Hire Duration:
+                </span>
+
+                <span id="bookingDuration">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Deliverer:
+                </span>
+
+                <span id="bookingDelivery">
+                </span>
+
+            </div>
+
+
+            <h4 class="section-title">
+                Equipment
+            </h4>
+
+
+            <div class="price-row">
+
+                <span>
+                    Tent Colour:
+                </span>
+
+                <span id="displayColor">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Tents:
+                </span>
+
+                <span id="displayTents">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Chairs:
+                </span>
+
+                <span id="displayChairs">
+                </span>
+
+            </div>
+
+
+            <h4 class="section-title">
+                Cost
+            </h4>
+
+
+            <div class="price-row">
+
+                <span>
+                    Tent Cost:
+                </span>
+
+                <span id="tentCost">
+                </span>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <span>
+                    Chair Cost:
+                </span>
+
+                <span id="chairCost">
+                </span>
+
+            </div>
+
+
+            <div class="price-row total">
+
+                <span>
+                    TOTAL:
+                </span>
+
+                <span id="totalCost">
+                </span>
+
+            </div>
+
+
+            <button
+                class="confirm-button"
+                onclick="confirmBooking()"
+            >
+                Confirm Booking
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2020 Rihanyo Tent Hiring.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
